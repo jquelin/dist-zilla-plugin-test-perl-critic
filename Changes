@@ -1,0 +1,6 @@
+Revision history for Dist::Zilla::Plugin::CriticTests
+
+0.1.0 Mon Aug 17 09:22:13 2009
+ - original release
+ - basic critic tests
+
