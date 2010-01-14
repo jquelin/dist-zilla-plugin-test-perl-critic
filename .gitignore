@@ -1,0 +1,18 @@
+# avoid version control files
+.git
+
+# avoid temp and backup files
+*~
+*#
+*.bak
+*.old
+*.rej
+*.swp
+*.tmp
+
+# avoid utility files
+.build
+_build
+
+# avoid archives of this distribution
+Dist-Zilla-Plugin-CriticTests-*
