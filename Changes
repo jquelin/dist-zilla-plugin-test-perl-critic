@@ -1,5 +1,14 @@
 Revision history for Dist::Zilla::Plugin::CriticTests
 
+{{$NEXT}}
+
+1.100140  2010-01-14 18:17:53 Europe/Paris
+ - requiring perl 5.8.x
+ - moving to a 1.yydddn versioning scheme
+ - using strict & warnings in added test
+
+**
+
 0.1.0 Mon Aug 17 09:22:13 2009
  - original release
  - basic critic tests
