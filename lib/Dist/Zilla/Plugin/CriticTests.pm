@@ -37,6 +37,9 @@ __DATA__
 ___[ xt/author/critic.t ]___
 #!perl
 
+use strict;
+use warnings;
+
 use Test::More;
 use English qw(-no_match_vars);
 
