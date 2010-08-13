@@ -85,5 +85,5 @@ use English qw(-no_match_vars);
 
 eval "use Test::Perl::Critic";
 plan skip_all => 'Test::Perl::Critic required to criticise code' if $@;
-Test::Perl::Critic->import( -profile => "{{ $critic_config }}" ) if -e {{ $critic_config }};
+Test::Perl::Critic->import( -profile => "{{ $critic_config }}" ) if -e "{{ $critic_config }}";
 all_critic_ok();
