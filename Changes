@@ -2,6 +2,9 @@ Revision history for Dist::Zilla::Plugin::CriticTests
 
 {{$NEXT}}
 
+1.102270  2010-08-15 10:07:55 Europe/Paris
+ - pod update
+
 1.102250  2010-08-13 19:06:51 Europe/Paris
  - ability to provide your own perlcriticrc (stephen r. scaffidi)
 
