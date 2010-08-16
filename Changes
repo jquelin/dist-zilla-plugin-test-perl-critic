@@ -1,9 +1,11 @@
 Revision history for Dist::Zilla::Plugin::CriticTests
 
 {{$NEXT}}
- - Eliminated 2-phase inject/munge in favour of one-phase
+
+1.102280  2010-08-16 19:28:00 Europe/Paris
+ - fix rt#60360 - Eliminated 2-phase inject/munge in favour of one-phase
     filegatherer templating. Eliminates ordering confusion
-    when placed after ExtraTests. ( Kent Fredric )
+    when placed after ExtraTests. (Kent Fredric)
 
 1.102270  2010-08-15 10:07:55 Europe/Paris
  - pod update
