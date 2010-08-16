@@ -50,7 +50,7 @@ __PACKAGE__->meta->make_immutable;
 1;
 =pod
 
-=for Pod::Coverage munge_file
+=for Pod::Coverage gather_file
 
 =head1 SYNOPSIS
 
