@@ -1,7 +1,5 @@
 Revision history for Dist::Zilla::Plugin::CriticTests
 
-{{$NEXT}}
-
 1.111450  2011-05-25 09:42:23 Europe/Paris
  - fix rt#68451 - undef critic_config should be treated as '' (mike doherty)
 
