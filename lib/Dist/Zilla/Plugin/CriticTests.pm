@@ -20,10 +20,9 @@ with qw(
 
 has critic_config => (
     is      => 'ro',
-    isa     => 'Str',
+    isa     => 'Maybe[Str]',
     default => 'perlcritic.rc',
 );
-
 
 sub gather_files {
     my ($self) = @_;
@@ -32,6 +31,7 @@ sub gather_files {
     return unless $data and %$data;
 
     my $stash = get_all_attribute_values( $self->meta, $self);
+    $stash->{critic_config} ||= 'perlcritic.rc';
 
     # NB: This code is a bit generalised really, and could be forked into its
     # own plugin.
