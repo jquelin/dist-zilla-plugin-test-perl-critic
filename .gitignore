@@ -15,4 +15,4 @@
 _build
 
 # avoid archives of this distribution
-Dist-Zilla-Plugin-CriticTests-*
+Dist-Zilla-Plugin-Test::Perl::Critic-*
