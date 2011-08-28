@@ -17,7 +17,7 @@ subtest 'default' => sub {
         {
             add_files => {
                 'source/dist.ini' => simple_ini(
-                    ('GatherDir', 'CriticTests')
+                    ('GatherDir', 'Test::Perl::Critic')
                 ),
                 "source/$critic_config" => $rc_content,
             },
@@ -47,7 +47,7 @@ subtest '.perlcriticrc' => sub {
         {
             add_files => {
                 'source/dist.ini' => simple_ini(
-                    ('GatherDir', ['CriticTests' => { critic_config => $critic_config}])
+                    ('GatherDir', ['Test::Perl::Critic' => { critic_config => $critic_config}])
                 ),
                 "source/$critic_config" => $rc_content,
             },
@@ -77,7 +77,7 @@ subtest 'empty' => sub {
         {
             add_files => {
                 'source/dist.ini' => simple_ini(
-                    ('GatherDir', ['CriticTests', { critic_config => '' }])
+                    ('GatherDir', ['Test::Perl::Critic', { critic_config => '' }])
                 ),
                 "source/$critic_config" => $rc_content,
             },
@@ -107,7 +107,7 @@ subtest 'undef' => sub {
         {
             add_files => {
                 'source/dist.ini' => simple_ini(
-                    ('GatherDir', ['CriticTests', { critic_config => undef }])
+                    ('GatherDir', ['Test::Perl::Critic', { critic_config => undef }])
                 ),
                 "source/$critic_config" => $rc_content,
             },

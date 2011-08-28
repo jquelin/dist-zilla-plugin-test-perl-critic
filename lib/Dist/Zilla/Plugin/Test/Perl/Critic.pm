@@ -2,7 +2,7 @@ use 5.008;
 use strict;
 use warnings;
 
-package Dist::Zilla::Plugin::CriticTests;
+package Dist::Zilla::Plugin::Test::Perl::Critic;
 # ABSTRACT: tests to check your code against best practices
 
 use Moose;
@@ -56,7 +56,7 @@ __PACKAGE__->meta->make_immutable;
 
 In your dist.ini:
 
-    [CriticTests]
+    [Test::Perl::Critic]
     critic_config = perlcritic.rc   ; relative to project root
 
 
