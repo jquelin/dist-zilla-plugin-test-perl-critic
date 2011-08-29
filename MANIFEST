@@ -8,6 +8,7 @@ README
 dist.ini
 examples/dist.ini
 lib/Dist/Zilla/Plugin/CriticTests.pm
+lib/Dist/Zilla/Plugin/Test/Perl/Critic.pm
 t/00-compile.t
 t/000-report-versions-tiny.t
 t/manifest.t

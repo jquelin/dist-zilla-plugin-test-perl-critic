@@ -1,6 +1,6 @@
 #!perl
 #
-# This file is part of Dist-Zilla-Plugin-CriticTests
+# This file is part of Dist-Zilla-Plugin-Test-Perl-Critic
 #
 # This software is copyright (c) 2009 by Jerome Quelin.
 #
