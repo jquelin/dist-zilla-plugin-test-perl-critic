@@ -13,10 +13,13 @@ before register_component => sub {
 
 =head1 SYNOPSIS
 
-PLEASE USE L<Dist::Zilla::Plugin::Test::Perl::Critic> instead.
+THIS MODULE IS DEPRECATED, PLEASE USE
+L<Dist::Zilla::Plugin::Test::Perl::Critic> INSTEAD. IT MAY BE REMOVED AT
+A LATER TIME (but not before 2012-08-29).
 
-This module is only a compatibility stub for that module, and should continue to work
-as expected.
+This module is only a compatibility stub for that module, and should
+continue to work as expected - although with a warning.  Refer to the
+replacement for the actual documentation.
 
 =cut
 
