@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Plugin::Test::Perl::Critic;
-# ABSTRACT: tests to check your code against best practices
+# ABSTRACT: Tests to check your code against best practices
 
 use Moose;
 use Moose::Util qw( get_all_attribute_values );
@@ -16,7 +16,6 @@ with qw(
     Dist::Zilla::Role::FileGatherer
     Dist::Zilla::Role::TextTemplate
 );
-
 
 has critic_config => (
     is      => 'ro',
@@ -44,7 +43,6 @@ sub gather_files {
     }
 }
 
-
 no Moose;
 __PACKAGE__->meta->make_immutable;
 1;
@@ -54,28 +52,28 @@ __PACKAGE__->meta->make_immutable;
 
 =head1 SYNOPSIS
 
-In your dist.ini:
+In your F<dist.ini>:
 
     [Test::Perl::Critic]
-    critic_config = perlcritic.rc   ; relative to project root
-
-
+    critic_config = perlcritic.rc ; default / relative to project root
 
 =head1 DESCRIPTION
 
-This is an extension of L<Dist::Zilla::Plugin::InlineFiles>, providing
-the following files:
+This will provide a F<t/author/critic.t> file for use during the "test" and
+"release" calls of C<dzil>. To use this, make the changes to F<dist.ini>
+above and run one of the following:
 
-=over 4
+    dzil test
+    dzil release
 
-=item * t/author/critic.t - a standard test to check your code against best practices
+During these runs, F<t/author/critic.t> will use L<Test::Perl::Critic> to run
+L<Perl::Critic> against your code and by report findings.
 
-=back
-
-This plugin accept the C<critic_config> option, to specify your own config
+This plugin accepts the C<critic_config> option, which specifies your own config
 file for L<Perl::Critic>. It defaults to C<perlcritic.rc>, relative to the
-project root.
+project root. If the file does not exist, L<Perl::Critic> will use its defaults.
 
+This plugin is an extension of L<Dist::Zilla::Plugin::InlineFiles>.
 
 =head1 SEE ALSO
 
