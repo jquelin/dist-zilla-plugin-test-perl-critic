@@ -15,6 +15,7 @@ use Data::Section 0.004 -setup;
 with qw(
     Dist::Zilla::Role::FileGatherer
     Dist::Zilla::Role::TextTemplate
+    Dist::Zilla::Role::PrereqSource
 );
 
 has critic_config => (
@@ -23,6 +24,17 @@ has critic_config => (
     default => 'perlcritic.rc',
 );
 
+sub register_prereqs
+{
+    my $self = shift;
+    $self->zilla->register_prereqs(
+        {  
+            type  => 'recommend',
+            phase => 'develop',
+        },
+        'Test::Perl::Critic' => '0',
+    );
+}
 sub gather_files {
     my ($self) = @_;
 
