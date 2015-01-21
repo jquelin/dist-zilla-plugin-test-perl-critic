@@ -1,6 +1,7 @@
 Revision history for Dist::Zilla::Plugin::Test::Perl::Critic
 
 {{$NEXT}}
+ - Remove need of MooseX::Autobox for tests. (Kent Fredric; GH #6)
 
 2.112410  2011-08-29 14:00:34 Europe/Paris
  - Renamed distribution to .*-Test-Perl-Critic, previous name
