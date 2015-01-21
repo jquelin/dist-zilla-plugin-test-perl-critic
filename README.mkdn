@@ -1,0 +1,64 @@
+# NAME
+
+Dist::Zilla::Plugin::Test::Perl::Critic - tests to check your code against best practices
+
+# VERSION
+
+version 2.112411
+
+# SYNOPSIS
+
+In your dist.ini:
+
+    [Test::Perl::Critic]
+    critic_config = perlcritic.rc   ; relative to project root
+
+# DESCRIPTION
+
+This is an extension of [Dist::Zilla::Plugin::InlineFiles](https://metacpan.org/pod/Dist::Zilla::Plugin::InlineFiles), providing
+the following files:
+
+- t/author/critic.t - a standard test to check your code against best practices
+
+This plugin accept the `critic_config` option, to specify your own config
+file for [Perl::Critic](https://metacpan.org/pod/Perl::Critic). It defaults to `perlcritic.rc`, relative to the
+project root.
+
+# SEE ALSO
+
+You can look for information on this module at:
+
+- Search CPAN
+
+    [http://search.cpan.org/dist/Dist-Zilla-Plugin-Test-Perl-Critic](http://search.cpan.org/dist/Dist-Zilla-Plugin-Test-Perl-Critic)
+
+- See open / report bugs
+
+    [http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-Plugin-Test-Perl-Critic](http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-Plugin-Test-Perl-Critic)
+
+- Mailing-list (same as [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla))
+
+    [http://www.listbox.com/subscribe/?list\_id=139292](http://www.listbox.com/subscribe/?list_id=139292)
+
+- Git repository
+
+    [http://github.com/jquelin/dist-zilla-plugin-test-perl-critic](http://github.com/jquelin/dist-zilla-plugin-test-perl-critic)
+
+- AnnoCPAN: Annotated CPAN documentation
+
+    [http://annocpan.org/dist/Dist-Zilla-Plugin-Test-Perl-Critic](http://annocpan.org/dist/Dist-Zilla-Plugin-Test-Perl-Critic)
+
+- CPAN Ratings
+
+    [http://cpanratings.perl.org/d/Dist-Zilla-Plugin-Test-Perl-Critic](http://cpanratings.perl.org/d/Dist-Zilla-Plugin-Test-Perl-Critic)
+
+# AUTHOR
+
+Jerome Quelin
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2009 by Jerome Quelin.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.

@@ -3,7 +3,6 @@ use warnings;
 use autodie;
 use Test::More 0.94;# tests => 2;
 use Test::DZil;
-use Moose::Autobox;
 
 my $rc_content = do { local $/; <DATA>};
 my $test_name = 'xt/author/critic.t';
@@ -28,10 +27,10 @@ subtest 'default' => sub {
 
     my $has_test = grep(
         $_->name eq $test_name,
-        $tzil->files->flatten
+        @{ $tzil->files }
     );
     ok($has_test, 'Perl::Critic test exists')
-        or diag explain $tzil->files->flatten;
+        or diag explain @{ $tzil->files };
 
     my $critic_test = $tzil->slurp_file("build/$test_name");
     like($critic_test, qr{Test::Perl::Critic}, 'We have a Perl::Critic test');
@@ -58,10 +57,10 @@ subtest '.perlcriticrc' => sub {
 
     my $has_test = grep(
         $_->name eq $test_name,
-        $tzil->files->flatten
+        @{ $tzil->files }
     );
     ok($has_test, 'Perl::Critic test exists')
-        or diag explain $tzil->files->flatten;
+        or diag explain @{ $tzil->files };
 
     my $critic_test = $tzil->slurp_file("build/$test_name");
     like($critic_test, qr{Test::Perl::Critic}, 'We have a Perl::Critic test');
@@ -88,10 +87,10 @@ subtest 'empty' => sub {
 
     my $has_test = grep(
         $_->name eq $test_name,
-        $tzil->files->flatten
+        @{ $tzil->files }
     );
     ok($has_test, 'Perl::Critic test exists')
-        or diag explain $tzil->files->flatten;
+        or diag explain @{ $tzil->files };
 
     my $critic_test = $tzil->slurp_file("build/$test_name");
     like($critic_test, qr{Test::Perl::Critic}, 'We have a Perl::Critic test');
@@ -118,10 +117,10 @@ subtest 'undef' => sub {
 
     my $has_test = grep(
         $_->name eq $test_name,
-        $tzil->files->flatten
+        @{ $tzil->files }
     );
     ok($has_test, 'Perl::Critic test exists')
-        or diag explain $tzil->files->flatten;
+        or diag explain @{ $tzil->files };
 
     my $critic_test = $tzil->slurp_file("build/$test_name");
     like($critic_test, qr{Test::Perl::Critic}, 'We have a Perl::Critic test');
