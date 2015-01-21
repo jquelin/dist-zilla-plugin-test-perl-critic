@@ -1,28 +1,35 @@
 # NAME
 
-Dist::Zilla::Plugin::Test::Perl::Critic - tests to check your code against best practices
+Dist::Zilla::Plugin::Test::Perl::Critic - Tests to check your code against best practices
 
 # VERSION
 
-version 2.112411
+version 3.000
 
 # SYNOPSIS
 
-In your dist.ini:
+In your `dist.ini`:
 
     [Test::Perl::Critic]
-    critic_config = perlcritic.rc   ; relative to project root
+    critic_config = perlcritic.rc ; default / relative to project root
 
 # DESCRIPTION
 
-This is an extension of [Dist::Zilla::Plugin::InlineFiles](https://metacpan.org/pod/Dist::Zilla::Plugin::InlineFiles), providing
-the following files:
+This will provide a `t/author/critic.t` file for use during the "test" and
+"release" calls of `dzil`. To use this, make the changes to `dist.ini`
+above and run one of the following:
 
-- t/author/critic.t - a standard test to check your code against best practices
+    dzil test
+    dzil release
 
-This plugin accept the `critic_config` option, to specify your own config
+During these runs, `t/author/critic.t` will use [Test::Perl::Critic](https://metacpan.org/pod/Test::Perl::Critic) to run
+[Perl::Critic](https://metacpan.org/pod/Perl::Critic) against your code and by report findings.
+
+This plugin accepts the `critic_config` option, which specifies your own config
 file for [Perl::Critic](https://metacpan.org/pod/Perl::Critic). It defaults to `perlcritic.rc`, relative to the
-project root.
+project root. If the file does not exist, [Perl::Critic](https://metacpan.org/pod/Perl::Critic) will use its defaults.
+
+This plugin is an extension of [Dist::Zilla::Plugin::InlineFiles](https://metacpan.org/pod/Dist::Zilla::Plugin::InlineFiles).
 
 # SEE ALSO
 
