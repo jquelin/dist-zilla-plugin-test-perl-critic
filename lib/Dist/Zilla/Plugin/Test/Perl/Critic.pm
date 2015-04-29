@@ -15,6 +15,7 @@ use Data::Section 0.004 -setup;
 with qw(
     Dist::Zilla::Role::FileGatherer
     Dist::Zilla::Role::TextTemplate
+    Dist::Zilla::Role::PrereqSource
 );
 
 has critic_config => (
@@ -43,12 +44,26 @@ sub gather_files {
     }
 }
 
+sub register_prereqs {
+    my $self = shift;
+
+    $self->zilla->register_prereqs(
+        {
+            type  => 'requires',
+            phase => 'develop',
+        },
+        'Test::Perl::Critic' => 0,
+
+        # TODO also extract list of policies used in file $self->critic_config
+    );
+}
+
 no Moose;
 __PACKAGE__->meta->make_immutable;
 1;
 =pod
 
-=for Pod::Coverage gather_files
+=for Pod::Coverage gather_files register_prereqs
 
 =head1 SYNOPSIS
 
@@ -116,10 +131,5 @@ ___[ xt/author/critic.t ]___
 use strict;
 use warnings;
 
-use Test::More;
-use English qw(-no_match_vars);
-
-eval "use Test::Perl::Critic";
-plan skip_all => 'Test::Perl::Critic required to criticise code' if $@;
-Test::Perl::Critic->import( -profile => "{{ $critic_config }}" ) if -e "{{ $critic_config }}";
+use Test::Perl::Critic (-profile => "{{ $critic_config }}") x!! -e "{{ $critic_config }}";
 all_critic_ok();
